@@ -40,9 +40,9 @@ COPY --from=builder --chown=nestjs:nodejs /app/drizzle.config.ts ./drizzle.confi
 COPY --from=builder --chown=nestjs:nodejs /app/src/modules/database ./src/modules/database
 
 ENV NODE_ENV=production
-ENV PORT=8081
+ENV PORT=8080
 
-EXPOSE 8081
+EXPOSE 8080
 
 USER nestjs
 
