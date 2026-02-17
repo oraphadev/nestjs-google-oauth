@@ -4,7 +4,7 @@ const bootstrap = async () => {
   const app = await nestFastifyApplicationAdapter();
   app.setGlobalPrefix('api');
   app.enableCors({ origin: process.env.FRONTEND_URL });
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT ?? 8081);
 };
 
 void bootstrap();
