@@ -18,6 +18,8 @@ COPY --from=deps /app/node_modules ./node_modules
 
 COPY . .
 
+RUN pnpm db:migrate
+
 RUN pnpm build
 
 RUN pnpm prune --prod
@@ -44,4 +46,4 @@ EXPOSE 8081
 
 USER nestjs
 
-CMD ["sh", "-c", "pnpm db:migrate && pnpm start:prod"]
+CMD ["pnpm", "start:prod"]
