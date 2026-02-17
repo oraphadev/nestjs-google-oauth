@@ -46,4 +46,4 @@ EXPOSE 8080
 
 USER nestjs
 
-CMD ["pnpm", "start:prod"]
+CMD ["node", "dist/src/main.js"]
