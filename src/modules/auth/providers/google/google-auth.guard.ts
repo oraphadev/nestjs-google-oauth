@@ -14,11 +14,13 @@ export class GoogleAuthGuard extends AuthGuard('google') {
     if (!callbackUrl) {
       return {
         session: false,
+        prompt: 'select_account',
       };
     }
 
     return {
       session: false,
+      prompt: 'select_account',
       state: Buffer.from(
         JSON.stringify({
           callbackUrl,
